@@ -1,0 +1,54 @@
+name: Deploy to ECS STG
+
+on:
+  push:
+    branches:
+      - develop
+      - develop/cicd
+jobs:
+  build_images:
+    runs-on: ubuntu-latest
+    environment: STG
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_STG }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_STG }}
+          aws-region: ap-northeast-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build and Push Docker Image
+        id: build
+        run: |
+          docker build -t ${{ secrets.ECR_REPOSITORY_URI_STG }} .
+          docker push ${{ secrets.ECR_REPOSITORY_URI_STG }}
+  deploy:
+    runs-on: ubuntu-latest
+    environment: STG
+    needs: build_images
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_STG }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_STG }}
+          aws-region: ap-northeast-1
+
+      - name: Update ECS API Service
+        id: update-api-service
+        run: |
+          aws ecs update-service --cluster ${{ secrets.ECS_CLUSTER_NAME_STG }} --service ${{ secrets.ECS_API_SERVICE_NAME_STG }} --force-new-deployment
+      - name: Update ECS Sidekiq Service
+        id: update-sidekiq-service
+        run: |
+          aws ecs update-service --cluster ${{ secrets.ECS_CLUSTER_NAME_STG }} --service ${{ secrets.ECS_SIDEKIQ_SERVICE_NAME_STG }} --force-new-deployment
+      - name: Log out of Amazon ECR
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}

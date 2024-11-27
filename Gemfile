@@ -60,7 +60,7 @@ gem "devise-jwt"
 gem "oauth"
 
 # background jobs
-gem "sidekiq", "~> 6.5", ">= 6.5.7"
+gem "sidekiq", "~> 7.3"
 gem "sidekiq-status"
 
 group :development, :test do

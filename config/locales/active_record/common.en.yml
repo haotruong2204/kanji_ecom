@@ -1,0 +1,131 @@
+en:
+  actions:
+    create: "Create"
+    update: "Update"
+    delete: "Delete"
+    edit: "Edit"
+    back: "Back"
+    save: "Save"
+    submit: "Submit"
+    cancel: "Cancel"
+    show: "Show"
+    log_out: "Log out"
+  titles:
+    user_list: "User List"
+    picture_list: "Picture List"
+    users:
+      index: "User List"
+      new: "New User"
+      create: "Create User"
+      edit: "Edit User"
+      update: "Update User"
+      destroy: "Delete User"
+      show: "User Detail"
+    pictures:
+      index: "Picture List"
+      new: "New Picture"
+      create: "Create Picture"
+      edit: "Edit Picture"
+      update: "Update Picture"
+      destroy: "Delete Picture"
+  activerecord:
+    errors:
+      messages:
+        confirmation:
+        accepted:
+        blank: "can't be empty"
+        present: "can't be present"
+        too_short: "is too short (minimum is %{count} characters)"
+        too_long: "is too long (maximum is %{count} characters)"
+        wrong_length: "is the wrong length (should be %{count} characters)"
+        taken: "is already taken"
+        invalid: "is invalid"
+        inclusion:
+        exclusion:
+        required: "is required"
+        not_a_number: "is not a number"
+    attributes:
+      user:
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        actions: "Actions"
+        created_at: "Created"
+        updated_at: "Updated at"
+      user_profile:
+        user_name: "User Name"
+        gender: "Gender"
+        date_of_birth: "Birth date"
+        avatar: "Avatar"
+      picture:
+        id: "ID"
+        title: "Title"
+        description: "Description"
+        image: "Image"
+        style: "Style"
+        age_restriction: "Age restriction"
+        sexual_content: "Sex restriction"
+        author: "Author ID"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        status: "Status"
+        total_like: "Total Like"
+  enums:
+    pictures:
+      style:
+        fine_art: "Fine art"
+        portraits: "Portrait"
+        landscape: "Landscape"
+        street_art: "Street art"
+        pop_art: "Pop art"
+        animal_painting: "Animal painter"
+        abstract_art: "Abstract art"
+        japanese_manga_and_anime: "Japanese manga"
+        minimalism: "Minimalism"
+        modernism: "Modernism"
+        japanese_painting: "Japanese painter"
+        psychedelic_art: "Psychedelic art"
+        real: "Real"
+        surrealism: "Surrealism"
+        art_informer: "Art Informer"
+        chinese_painting: "Chinese Painting"
+        ethnic: "Ethnic"
+        feminism: "Feminism"
+        internet: "Internet"
+        micro_pop: "Micro Pop"
+        orientalism: "Orientalism"
+        primitive: "Primitive"
+        religious: "Religious"
+        caricature: "Caricature"
+        semi_abstract: "Semi Abstract"
+        subculture: "Subculture"
+        symbolic: "Symbolic"
+      age_restriction:
+        all_age: "All age"
+        adult: "R-18"
+      sexual_content:
+        un_sexual_content: "None"
+        sexual_content: "Yes (including mild depictions)"
+      publicity:
+        un_publicity: "Private"
+        publicity: "Public"
+    user_profiles:
+      gender:
+        male: "Male"
+        female: "Female"
+        other: "Other"
+    faqs:
+      faq_type:
+        artwork: "Submitting/managing your work"
+        authentication: "Register / Log in"
+        edit_profile: "Edit profile"
+        about_art: "About ART Appraisal"
+        about_withdrawal: "About withdrawal"
+  time:
+    formats:
+      full_time: "%y-%m-%d %H:%M:%S"
+  notice:
+    message:
+      action: "%{resource} was successfully %{actions}."

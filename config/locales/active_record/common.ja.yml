@@ -1,0 +1,132 @@
+ja:
+  actions:
+    create: "作成"
+    update: "更新"
+    delete: "削除"
+    edit: "編集"
+    back: "戻る"
+    save: "保存"
+    submit: "送信"
+    cancel: "キャンセル"
+    show: "表示"
+    log_out: "ログアウト"
+  titles:
+    user_list: "ユーザー リスト"
+    picture_list: "画像リスト"
+    users:
+      index: "ユーザー リスト"
+      new: "新規ユーザー"
+      create: "ユーザーを登録する"
+      edit: "ユーザーを編集する"
+      update: "ユーザーを更新する"
+      destroy: "ユーザーを削除する"
+      show: "ユーザーの詳細"
+    pictures:
+      index: "画像一覧"
+      new: "新規画像"
+      create: "画像を登録する"
+      edit: "画像を編集する"
+      update: "画像を更新する"
+      destroy: "画像を削除する"
+      show: "画像の詳細"
+  activerecord:
+    errors:
+      messages:
+        confirmation:
+        accepted:
+        blank: "空にすることはできません"
+        present: "存在してはいけません"
+        too_short: "短すぎます (最小は%{count}文字です)"
+        too_long: "長すぎます (最大は%{count}文字です)"
+        wrong_length: "長さが間違っています (必要な長さは%{count}文字です)"
+        taken: "既に使用されています"
+        invalid: "無効です"
+        inclusion:
+        exclusion:
+        required: "必須です"
+        un_a_number: "数字ではありません"
+    attributes:
+      user:
+        id: "ID"
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワードの確認"
+        actions: "アクション"
+        created_at: "登録日"
+        updated_at: "更新日"
+      user_profile:
+        user_name: "ニックネーム"
+        gender: "性別"
+        date_of_birth: "生年月日"
+        avatar: "アバター"
+      picture:
+        id: "ID"
+        title: "タイトル"
+        description: "説明"
+        image: "画像"
+        style: "スタイル"
+        age_restriction: "年齢制限"
+        sexual_content: "性的コンテンツ"
+        author: "ID は、次のとおりです"
+        created_at: "登録日"
+        updated_at: "更新日"
+        status: "ステータス"
+        total_like: "合計いいね数"
+  enums:
+    pictures:
+      style:
+        fine_art: "ファインアート"
+        portraits: "人物画・肖像画"
+        landscape: "風景画"
+        street_art: "ストリートアート"
+        pop_art: "ポップアート"
+        animal_painting: "動物画"
+        abstract_art: "抽象画"
+        japanese_manga_and_anime: "日本の漫画・アニメ"
+        minimalism: "ミニマリズム"
+        modernism: "モダニズム"
+        japanese_painting: "日本画"
+        psychedelic_art: "サイケデリックアート"
+        real: "写実主義"
+        surrealism: "シュルレアリズム(超現実主義)"
+        art_informer: "アンフォルメル"
+        chinese_painting: "中国画"
+        ethnic: "エスニック"
+        feminism: "フェミニズム"
+        internet: "インターネット"
+        micro_pop: "マイクロポップ"
+        orientalism: "オリエンタリズム"
+        primitive: "原始的"
+        religious: "宗教的"
+        caricature: "風刺画"
+        semi_abstract: "半抽象"
+        subculture: "サブカルチャー"
+        symbolic: "象徴的"
+      age_restriction:
+        all_age: "全年齢"
+        adult: "R-18"
+      sexual_content:
+        un_sexual_content: "なし"
+        sexual_content: "あり （軽度な描写も含む）"
+      publicity:
+        un_publicity: "非公開"
+        publicity: "全体に公開"
+    user_profiles:
+      gender:
+        male: "男性"
+        female: "女性"
+        other: "その他"
+    faqs:
+      faq_type:
+        artwork: "作品の投稿/管理"
+        authentication: "登録・ログイン"
+        edit_profile: "プロフィール編集"
+        about_art: "ART鑑定について"
+        about_withdrawal: "退会について"
+  time:
+    formats:
+      full_time: "%y-%m-%d %H:%M:%S"
+  notice:
+    message:
+      action: "%{resource}が正常に%{actions}されました。"

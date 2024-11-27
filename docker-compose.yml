@@ -38,6 +38,17 @@ services:
     container_name: kanji_ecom.redis
     volumes:
       - redis-data:/var/shared/redis
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq -C ./config/sidekiq.yml 2>&1 | tee ./log/sidekiq.log
+    container_name: kanji_ecom.sidekiq
+    volumes:
+      - .:/src/app
+    links:
+      - db
+      - redis
+    stdin_open: true
+    tty: true
 volumes:
   mysql_data:
   bundle-data:

@@ -1,0 +1,49 @@
+ja:
+  api:
+    common:
+      success: "成功"
+      fail: "失敗"
+      custom_code: "カスタムコード"
+      create_success: "リソースの作成に成功しました。"
+      update_success: "リソースの更新に成功しました。"
+      delete_success: "リソースの削除に成功しました。"
+      invalid_oauth_type: "サポートされていないOAuthタイプ。"
+    error:
+      bad_request: "無効な入力です。"
+      unauthorized: "続行する前に認証が必要です。"
+      forbidden: "この操作を行う権限がありません。"
+      not_found: "リソースが見つかりません。"
+      unprocessable_entity: "サーバーはリクエストを完了できません。"
+      server_error: "サーバーで問題が発生しました。"
+      already_exists: "リソースが既に存在しています。"
+      need_password_change: "続行する前にパスワードを変更する必要があります。"
+      some_references_not_found: "いくつかの参照が見つかりません。"
+      session_has_expired: "ログインセッションの有効期限が切れました！"
+      invalid_xml: "無効なXMLファイルです"
+      route_not_found: "ルートが見つかりません"
+      incorrect_captcha: "キャプチャが正しくありません"
+    v1:
+      users:
+        profile:
+          create:
+            success: "ユーザーが作成されました。"
+          update:
+            success: "ユーザーが更新されました。"
+          details:
+            success: "ユーザーのプロフィールが表示されました。"
+        pictures:
+          destroy:
+            success: "画像は正常に削除されました"
+        follows:
+          create:
+            success: "フォローが行われました。"
+          destroy:
+            success: "フォローを解除しました。"
+  mailer:
+    user:
+      reset_password_success:
+        subject: "パスワードがリセットされました。"
+      send_reset_password_token:
+        subject: "パスワードリセット"
+      send_otp:
+        subject: "OTP認証"

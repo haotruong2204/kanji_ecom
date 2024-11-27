@@ -1,0 +1,6 @@
+:verbose: false
+:concurrency: 45
+:queues:
+  - critical
+  - default
+  - low
